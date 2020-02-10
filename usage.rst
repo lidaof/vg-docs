@@ -125,7 +125,7 @@ Selecting “Hide this node” hides the selected node, and displays a black cir
 Selecting “Add to cart” adds the selected strain to the user’s cart for easy viewing.
 
 Branch Highlighting Functions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 In either the linear or radial, right- or left-aligned trees, the user is provided with several additional functions for viewing branches of the tree. When a user selects a small, gray node within the tree, a pop-up menu with several functions appears. We will be demonstrating these functionalities by selecting each time the node circled in red below:
 
