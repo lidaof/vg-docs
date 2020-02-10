@@ -10,7 +10,7 @@ Welcome to WashU Virus Genome Browser's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   snv.rst
 
 Indices and tables
 ==================
