@@ -7,9 +7,10 @@ Welcome to WashU Virus Genome Browser's documentation!
 ======================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
+   usage.rst
    snv.rst
 
 Indices and tables
