@@ -38,7 +38,7 @@ The “Custom Tracks” function, “View Local Tracks” function, and “Text 
 
 .. image:: _static/use6.png
 
-This track type displays any genomic variations the strain has from the listed reference. If the variant is a mis-¬¬¬¬¬¬match, the track will display the deviated nucleotide by default following the same color scheme as the reference (although, users can change this to their liking). If a user selects a particular mutation, a pop-up ¬¬¬¬¬¬¬the variation is an insertion, the residue will be displayed dark blue, and the inserted positions will be displayed if possible (as shown on right in figure above). If the insertion is too long to display in the current view, the user can click on the position and a pop-up description will list the inserted residues. If a variation is a deletion in the strain relative to the reference, the position will be colored salmon, as shown below.
+This track type displays any genomic variations the strain has from the listed reference. If the variant is a mismatch, the track will display the deviated nucleotide by default following the same color scheme as the reference (although, users can change this to their liking). If a user selects a particular mutation, a pop-up the variation is an insertion, the residue will be displayed dark blue, and the inserted positions will be displayed if possible (as shown on right in figure above). If the insertion is too long to display in the current view, the user can click on the position and a pop-up description will list the inserted residues. If a variation is a deletion in the strain relative to the reference, the position will be colored salmon, as shown below.
 
 .. image:: _static/use7.png
 
