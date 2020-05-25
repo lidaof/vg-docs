@@ -34,18 +34,18 @@ From this drop-down menu, if the user selects “Annotation Tracks", an expandab
 
 .. image:: _static/use5.png
 
-The “Remote Tracks” selections allow for user-upload of individual tracks or data hubs from a hosted url. Upon selection, the user is prompted to select whether he/she would like to upload an individual track (default tab) or upload a data hub (right-hand tab). The user can then select the drop-down arrow under “Track type” to view all tracks supported by the WashU Virus Browser and select the track type matching their data. 
+The “Remote Tracks” selections allow for user-upload of individual tracks or data hubs from a hosted url. Upon selection, the user is prompted to select whether he/she would like to upload an individual track (default tab) or upload a data hub (right-hand tab). If uploading an individual track, the user can then select the drop-down arrow under “Track type” to view all tracks supported by the WashU Virus Browser and select the track type matching their data. 
 
 
 .. image:: _static/use6.png
 
-A comprehensive list and description of these tracks can be found here: https://eg.readthedocs.io.en/latest/tracks.html.
+A comprehensive list and description of these tracks can be found here: https://eg.readthedocs.io/en/latest/tracks.html.
 
 To upload a track (in text format, such as a .bed.txt, .bedgraph.txt, or .longrange.txt, etc.) directly from one’s compute, the user would select “Local Text Tracks”. Upon selection, the user can select from the drop-down menu the file type that matches their data. In the default view of this pop-up window, the text file format is “bed” and an example of the text file format is below. Optionally, the user can configure track options, such as metadata, track height, track color, etc. by filling in the text box below.
 
 .. image:: _static/use7.png
 
-To upload a track (in binary format, such as .bigwig, .hic, .g3d, .bedgraoh.gz(.tbi), .bed.gz, ect.) directly from one’s computer, the user would select “Local Tacks”. Here, the user can choose whether to upload a track (default tab) or data hub (right-handed tab) from his/her computer directly. After selecting “Add Local Tracks”, the user can then select the track type matching their file via the drop-down menu shown above. Users can optionally specify in the accompanying text box display preferences for their added track, as demonstrated above by selecting “Example”. 
+To upload a track (in binary format, such as .bigwig, .hic, .g3d, .bedgraoh.gz(.tbi), .bed.gz, ect.) directly from one’s computer, the user would select “Local Tacks”. Here, the user can choose whether to upload a track (default tab) or data hub (right-handed tab) from his/her computer directly. After selecting “Add Local Tracks”, the user can then select the track type matching their file via the drop-down menu shown above. Users can optionally specify in the accompanying text box display preferences for their added track, as demonstrated below by selecting “Example”. 
 
 .. image:: _static/use8.png
 
@@ -62,7 +62,7 @@ In addition to annotation tracks and user-uploaded tracks, our browser hosts gen
 Apps
 ^^^^
 
-All applications available on the WashU Virus Genome Browser are also available on the WashU Epigenome Browser, and are described in detail in the Epigenome Browser tutorial (https://eg.readthedocs.io/en/latest/usage.html#apps). Of the available apps, “Region Set View” allows the user to visualize several distant genomic regions in the same viewing window. Selection “Session” allows the user to save their current browser status, generating a session ID that can be shared with collaborators and allowing for easily resuming gat a later time. “Fetch Sequence” allows the user to quickly obtain the reference sequence spanning the current view in a fasta format. Selecting “Screenshot” allows the user to generate publication-quality SVGs or PDFs of the current frame of view, with the option to highlight genomic regions of interest. Additional apps include “Gene Plot”, “Scatter Plot”, and “Go Live”, which are explained in detail in the Epigenome Browser tutorial.
+All applications available on the WashU Virus Genome Browser are also available on the WashU Epigenome Browser, and are described in detail in the Epigenome Browser tutorial (https://eg.readthedocs.io/en/latest/usage.html#apps). Of the available apps, “Region Set View” allows the user to visualize several distant genomic regions in the same viewing window. Selecting “Session” allows the user to save their current browser status, generating a session ID that can be shared with collaborators and allowing for easily resuming at a later time. “Fetch Sequence” allows the user to quickly obtain the reference sequence spanning the current view in a fasta format. Selecting “Screenshot” allows the user to generate publication-quality SVGs or PDFs of the current frame of view, with the option to highlight genomic regions of interest. Additional apps include “Gene Plot”, “Scatter Plot”, and “Go Live”, which are explained in detail in the Epigenome Browser tutorial.
 
 Settings
 ^^^^^^^^
@@ -91,7 +91,7 @@ Additional links include one to our documentation page, with helpful tutorials, 
 Phylogenetic Tree View
 ----------------------
 
-When users select the “Tree View” (blue arrow in first figure shown above), they are taken to our tree visual representation of the strains from the selected reference species. If the selected reference is SARS-CoV-2, the browser will load in a phylogenetic tree parsed from Nextstrain (http://data.Nextstrain.org/ncov.json), and therefore includes only strains available from Nextstrain. If the user selects any of the remaining three viruses (SARS, MERS, or Ebola), they are directed to an approximately-maximun-likelihood tree consisting of all available strains hosted by NCBI (https://www.ncbi.nlm.nih.gov/nuccore), built using FastTree with the GTR substitution model. 
+When users select the “Tree View” (blue arrow in first figure shown above), they are taken to our tree visual representation of the strains from the selected reference species. If the selected reference is SARS-CoV-2, the browser will load in a phylogenetic tree parsed from Nextstrain (http://data.Nextstrain.org/ncov_global.json), and therefore includes only strains available from Nextstrain. If the user selects any of the remaining three viruses (SARS, MERS, or Ebola), they are directed to an approximately-maximun-likelihood tree consisting of all available strains hosted by NCBI (https://www.ncbi.nlm.nih.gov/nuccore), built using FastTree with the GTR substitution model. 
 
 Coloring Tree by Metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ Or by “Collection Date”:
 Identifying Strains of Interest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If users pre-select strains and add them to their cart from the data table, they can see where their strains of interest fall within the tree. As an example below, the following tracks have been added to cart:
+If users pre-select strains and add them to their cart from the data table, they can see where their strains of interest fall within the tree (please keep in mind that for SARS-CoV-2, only strains housed in Nextstrain will be available for viewing in the tree view). As an example below, the following tracks have been added to cart:
 
 .. image:: _static/use18.png
 
