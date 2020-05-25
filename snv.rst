@@ -1,40 +1,40 @@
 SNV track
 =========
 
-This section shows you how to display variations with the “SNV” track.
+This section shows you how to display variations with using “SNV” tracks.
 
 Understanding the SNV track
 ---------------------------
 
 
-The SNV track is a new track type added to the Virus Genome Browser to view sequence variations. It supports 2 display modes: “density” mode for a “zoomed out” view and “full” mode for a “zoomed in” view. The “density” mode displays the density of variation, suitable for a genomic view, whereas the “full” mode has a color code for the detailed information of each variation, suitable for viewing an individual locus. To switch between density mode and full mode, right click on the head of the track and use the “display mode” drop down menu. 
+The SNV track is a new track type added to the WashU Virus Genome Browser to view sequence variations from the reference. The track supports 2 display modes: “density” mode for a “zoomed out” view and “full” mode for a “zoomed in” view. The “density” mode displays the density of variation, suitable for a genomic view, whereas the “full” mode has a color code for the detailed information of each variation, suitable for viewing an individual locus. To switch between density mode and full mode, right click on the head of the track and use the “display mode” drop-down menu. 
 
 .. image:: _static/snv1.png
 
-Density mode and the “zoomed out” view
+Density mode and the “zoomed-out” view
 --------------------------------------
 
-The density mode is created because when viewing the whole genome, individual variations are impossible to see. Instead, the density mode tells us where in the genome the variations are. This is illustrated in the screenshot below. 2 SARS strains (AY278488.2, aka the “BJ01”; “DQ71615.1, aka the “bat rp3”) and one nCoV strain (NC_045512.2, aka the reference nCoV) are aligned to the SARS reference genome. Sequence variation displayed in density mode shows that the divergence between the 2019-nCoV reference genome (red) and the SARS reference genome is higher than the divergence between the two additional SARS strains (green) and the SARS reference genome. 
+The density mode was implemented because when viewing the entire genome, individual variations are impossible to see. Instead, the density mode depicts the frequency of mutations across the genome, averaging over genomic intervals, as illustrated in the screenshot below. 2 SARS strains (AY278488.2 (“BJ01”) and “DQ71615.1 (“bat rp3”)) and one SARS-CoV-2 strain (the reference strain, NC_045512.2) are aligned to the SARS reference genome. Sequence variation displayed in density mode shows that the divergence between the SARS-CoV-2 reference genome (red, below) and the SARS reference genome is higher than the divergence between the two additional SARS strains (green, below) and the SARS reference genome. 
 
-For AY278488.2, the variation from reference is mainly confined to the beginning of the genome, while the remainder of the genome is relatively consistent with the reference. However, for DQ071615.1 (bat-derived), the 5’ end of gene S displays high variation from the reference genome. Likewise, the SARS Shannon track shows that the SARS genome is highly diverse across different strains at gene S. Once a region of interest is identified, the standard magnification tool (in red circle) of the browser can be used to quickly zoom into the region.
+For AY278488.2, the variation from reference is mainly confined to the beginning of the genome, while the remainder of the genome is relatively consistent with the reference. However, for DQ071615.1 (bat-derived), the 5’ end of gene S displays high variation from the reference genome. Likewise, the SARS Shannon track shows that the SARS genome is highly diverse across different strains across gene S. Once a region of interest is identified, the standard magnification tool (circled in red) of the browser can be used to quickly zoom into the region.
 
 .. image:: _static/snv2.png
 
 Full mode at a zoomed in view
 -----------------------------
 
-Zooming in to nucleotide level (and don’t forget to change display mode to “full” through right clicking) and you can see the color code!
+When zoomed in to the nucleotide-level and displayed in “Full” mode, a color-coded track indicating all the variation from reference will be shown. The “Full” mode is further detailed below.
 
 .. image:: _static/snv3.png
 
 Nomenclature:
 ^^^^^^^^^^^^^
 
-**Reference**: the “reference” is the sequence you choose as reference, it’s the one completely color coded by nucleotides showing as “ruler” at the top. It has nothing to do with NCBI reference sequence (although the reference provided by us for the 4 viruses are indeed NCBI reference sequences). You can upload any sequence in FASTA format as the reference (check box at the upper left corner of the track view)
+**Reference**: the “reference” is the sequence corresponding to the viral species selected by the user. It is the one completely color coded according to nucleotides and is shown as the “ruler” at the top of the browser view. The references hosted on the browser for the 4 virus species (SARS-CoV-2, SARS, MERS, and Ebola) are NCBI reference sequences.
 
 **Query**: The “query” is the sequence being aligned to the “reference”. 
 
-**Variation** refers to events where the nucleotide of the query at a certain position is difference from the reference. It can be mismatch, insertion or deletion. 
+**Variation** refers to events where the nucleotide of the query at a certain position is difference from the reference. It can be a mismatch, insertion or deletion. 
 
 .. image:: _static/snv4.png
 
@@ -43,49 +43,50 @@ Color code:
 
 Mismatches:
 
-1.	A mismatch from the reference happened at a certain nucleotide, the query being “A”: green (#89C738)
+1.	A mismatch from the reference observed at a specific nucleotide, the query being “A”: green (#89C738)
 2.	the query being “T”: purple (#9238C7)
 3.	the query being “C”: orange (#E05144)
 4.	the query being “G”: light blue (#3899C7)
 5.	the query being “N”: grey52 (#858585)
 
-deletions:
+Deletions:
 
-1.	if a deletion happens to the query (a gap for the query in pairwise alignment), the nucleotide will be colored “Rosy brown (#BC8F8F)”
+1.	If a deletion is present in the query (a gap for the query in the pairwise alignment), the nucleotide will be colored “Rosy brown (#BC8F8F)”
 
 Insertions:
 
-1.	the reference on the browser is always ungapped. If a insertion into the query happens (which means a gap for the reference in pairwise alignment), the nucleotide right after the insertion will be colored “blue”. Details of inserted sequences will be revealed in you click on the nucleotide colored blue.  
+1.	the reference on the browser is always ungapped. If a insertion into the query happens (which signifies a gap for the reference in a pairwise alignment), the nucleotide proceding the insertion will be colored “blue”. Details of inserted sequences will be revealed if you click on the nucleotide colored blue.  
 
 .. image:: _static/snv5.png
 
 
-Behind a SNV track: the “pairwise” format
+Behind the SNV track: the “pairwise” format
 -----------------------------------------
+
+Alignment results can differ significantly when different aligners and different parameters are used. However, most aligners return alignments in the same format: FASTA (or markx3 in the case of EMBL aligners). Therefore, the WashU Virus Genome Browser offers scripts for the user to convert their own alignment results into “pairwise”-formatted files, which can be directly uploaded and displayed on the browser. Scripts can be found on our GitHub page: https://github.com/debugpoint136/WashU-Virus-Genome-Browser.
 
 Uploading interface
 ^^^^^^^^^^^^^^^^^^^
 
-
-Suppose you figured out a perfect tool to do perfect alignment (or maybe you eyeballed everything) and you have results that are much better than the ones we have in the database, you can upload your alignment results to display as a SNV track, and here is how.
-
-In the track view of the browser, click “Tracks” and then select “Custom Tracks”. This will lead you to a upload interface. Once there, select “pairwise” as your track type and enter the URL (just like any other tracks) 
+In the browser view, click “Tracks” and then “Remote Tracks”. This will lead the user to a upload interface. Once there, select “pairwise” as the track type and enter the track’s URL.
 
 .. image:: _static/snv6.png
+
+Alternatively, if the track is stored on the user’s local computer, he/she can upload the track by selecting “Tracks” > “Local Tracks”. See the “Tracks” section under “Navigating the WashU Virus Genome Browser” above for more details.
 
 The pairwise format
 ^^^^^^^^^^^^^^^^^^^
 
-The pairwise format is an extension of the bed format with the 4th column showing variations from the reference. Specifically::
+The pairwise format is an extension of the .bed format, where the 4th column contains variations from the reference. Specifically::
 
-Column 1: name of the reference that the query is being aligned to
-Column 2: the start position on the reference
-Column 3: the end position on the reference
-Column 4: variation type and detail.
+Column 1: Name of the reference that the query is aligned to
+Column 2: The start position on the reference
+Column 3: The end position on the reference
+Column 4: Variation type and details
 
-For column 2 and 3: Since the pairwise format is per-nucleotide code, end = start+1. Also, the browser is 0 based, which means that if there is a mismatch at the first nucleotide, column 2 would be 0 while column 3 would be 1.
+For columns 2 and 3, since the pairwise format is per-nucleotide, “end” usually equals “start” + 1 (the only exception is a deletion, and when several consecutive nucleotides are deleted, they can be merged into 1 line). Also, the browser is 0-based, which means that if there is a mismatch at the first nucleotide, column 2 would be “0” while column 3 would be “1”.
 
-For column 4, the format is “variation_type: detail”. Variation types are: “insertion”, “deletion”, “mismatch”. For insertion, “detail” is the sequence inserted before this nucleotide. For “deletion”, the “detail” is the nucleotide of the reference at this position that was deleted. For “mismatch”, “detail” is the nucleotide of the query.
+For column 4, the format is “variation_type:detail”. Variation types are: “insertion”, “deletion”, and “mismatch”. For “insertion”, “detail” is the sequence inserted before this nucleotide. For “deletion”, the “detail” is the nucleotide of the reference at this position that was deleted. For “mismatch”, “detail” is the nucleotide of the query.
 
 .. note:: Matches between the query and the reference are not coded in the pairwise format. 
 
@@ -93,23 +94,18 @@ For column 4, the format is “variation_type: detail”. Variation types are: �
 
     NC_004718.3     96      97      mismatch: T
     NC_004718.3     140     141     mismatch: C
-    NC_004718.3     142     143     mismatch: C
-    NC_004718.3     256     257     mismatch: G
-    NC_004718.3     284     285     mismatch: A
-    NC_004718.3     285     286     mismatch: A
-    NC_004718.3     323     324     mismatch: T
+    NC_004718.3     142     143     mismatch: G
+    NC_004718.3     258     260     mismatch: A
 
     NC_004718.3     3089    3090    insertion: GG
     NC_004718.3     3093    3094    insertion: CTCA
     NC_004718.3     21527   21528   insertion: CTA
     NC_004718.3     21560   21561   insertion: C
 
-    NC_004718.3     3059    3060    deletion: A
-    NC_004718.3     3060    3061    deletion: G
-    NC_004718.3     3061    3062    deletion: A
+    NC_004718.3     3059    3062    deletion: AGA
     NC_004718.3     3223    3224    deletion: A
 
-.. note:: the files needs to sorted, zipped and indexed before uploading, just as any bed files. To zip the files:
+.. note:: The files need to sorted, zipped and indexed before uploading, just as any .bed file would need to be. To zip the files:
 
 .. code-block:: bash
     sort -k1,1 -k2,2n snvfile > snvfile.sort
@@ -119,20 +115,19 @@ For column 4, the format is “variation_type: detail”. Variation types are: �
 To generate the pairwise format
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We offer scripts to generate pairwise format from any pairwise alignment results (or eyeballing results) in markx3 (basically FASTA) format. The requirements are:
+We offer a script (“publicConvertMarkx3.py) to generate a pairwise-formatted file from any pairwise alignment result in markx3 or FASTA format. The requirements are as follows:
 
-1.	the reference should be the first sequence
-2.	only 2 sequences in the file (as it should be for pairwise alignment). 
-3.	there shouldn’t be any positions where the reference and the query are both “gapped”. Our script tries to handle this but we are not sure it won’t cause any errors.
+1.	The reference should be the first sequence.
+2.	Only 2 sequences should be present in the file (as is the case for pairwise alignment).
 
-a sample::
+An example FASTA-formatted pairwise alignment result is shown below::
 
     >test_reference ..
     ATGAGTCTCTCTGATAAGGACAAGGCTGCTGTGAAAGCCCTATGG------A
     >test_query ..
     CTG--TCTC-CTG---CCGACAAGACCAACGTCAAGGCCGCCTGGGGTAAGA
 
-The script convert this to pairwise format is: “publicConvertMarkx3.py”, which calls “convert_tsv_to_bed_and_cat.sh”. 
+The script used to convert this to our pairwise format is: “publicConvertMarkx3.py”, which calls “convert_tsv_to_bed_and_cat.sh” (both located on our GitHub page: https://github.com/debugpoint136/WashU-Virus-Genome-Browser). 
 To see help, use: 
 
 .. code-block:: bash
@@ -155,9 +150,9 @@ The output files will be automatically zipped and ready to go!!
 Batch alignment from FASTA to pairwise format
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We also offer another script that can perform pairwise alignment in batch (using EMBL aligners “stretcher” or “water”) and directly generate files in pairwise format that can be directly uploaded as SNV tracks.
+We offer another script (“publiAlignment.py”) that can perform pairwise alignments in batch (using EMBL aligners “stretcher” or “water”) and directly generate files in pairwise format that can be directly uploaded as SNV tracks.
 
-The script is: publicAlignment.py
+The script is: publicAlignment.py and is located here: https://github.com/debugpoint136/WashU-Virus-Genome-Browser/blob/master/scripts/publicAlignment.py
 
 .. code-block:: bash
 
@@ -178,7 +173,7 @@ The script is: publicAlignment.py
 Batch upload as json files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We offer another script that takes in a tab-delimited txt file (tsv file) listing the web location and track type of individual files and output a json file that can be used to upload multiple tracks in batch.
+We offer another script (“publicJsonGen.py”, located here: https://github.com/debugpoint136/WashU-Virus-Genome-Browser/blob/master/scripts/publicJsonGen.py)that takes in a tab-delimited txt file (.tsv file) listing the web location and track type of individual files, and output a .json file that can be used to upload multiple tracks in batch.
 
 .. code-block:: bash
 
@@ -194,7 +189,7 @@ We offer another script that takes in a tab-delimited txt file (tsv file) listin
             
     contact: changxu.fan@gmail.com for help
 
-The tsv file that can be converted looks like this:
+The .tsv file that can be converted looks like this:
 
 .. csv-table::
     :header: "name", "url",	"track_type", "virus"
@@ -203,9 +198,14 @@ The tsv file that can be converted looks like this:
     "SARS_DQ071615.1_SNV", "https://your.url.to.file2", "pairwise", "SARS"
     "SARS_AY278488.2_SNV", "https://your.url.to.file3", "pairwise", "SARS"
 
-Upload json formatted datahub
+Upload json-formatted datahub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the track view of the browser, click “Tracks” and then select “Custom Tracks”. This will lead you to a upload interface. Once there, click the “Add Custom Data Hub” tab, then just upload the json!
+To upload a son-formatted data hub, in the browser view, select “Tracks” and then select either “Remote Tracks” or “Local Tracks” (depending on whether the .json file is stored remotely to locally, see above documentation under “Navigating the WashU Virus Genome Browser” for further details). 
 
-.. image:: _static/snv7.png
+A .tsv file should have a format similar to that shown below in order for a successful conversion.
+
+name	url	track_type	virus
+SARS_AY278488.2_SNV	https://your.url.to.file1	pairwise	SARS
+SARS_DQ071615.1_SNV	https://your.url.to.file2	pairwise	SARS
+SARS_AY278488.2_SNV	https://your.url.to.file3	pairwise	SARS
