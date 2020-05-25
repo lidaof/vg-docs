@@ -91,7 +91,7 @@ Additional links include one to our documentation page, with helpful tutorials, 
 Phylogenetic Tree View
 ----------------------
 
-When users select the “Tree View” (blue arrow in first figure shown above), they are taken to our tree visual representation of the strains from the selected reference species. If the selected reference is SARS-CoV-2, the browser will load in a phylogenetic tree parsed from Nextstrain (http://data.Nextstrain.org/ncov.json), and therefore includes only strains available from Nextstrain. If the user selects any of the remaining three viruses (SARS, MERS, or Ebola), they are directed to an approximately-maximun-likelihood tree consisting of all available strains hosted by NCBI (https://www.ncbi.nlm.nih.gov/nuccore), built using FastTree with the GTR substitution model. 
+When users select the “Tree View” (blue arrow in first figure shown above), they are taken to our tree visual representation of the strains from the selected reference species. If the selected reference is SARS-CoV-2, the browser will load in a phylogenetic tree parsed from Nextstrain (http://data.Nextstrain.org/ncov_global.json), and therefore includes only strains available from Nextstrain. If the user selects any of the remaining three viruses (SARS, MERS, or Ebola), they are directed to an approximately-maximun-likelihood tree consisting of all available strains hosted by NCBI (https://www.ncbi.nlm.nih.gov/nuccore), built using FastTree with the GTR substitution model. 
 
 Coloring Tree by Metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ Or by “Collection Date”:
 Identifying Strains of Interest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If users pre-select strains and add them to their cart from the data table, they can see where their strains of interest fall within the tree. As an example below, the following tracks have been added to cart:
+If users pre-select strains and add them to their cart from the data table, they can see where their strains of interest fall within the tree (please keep in mind that for SARS-CoV-2, only strains housed in Nextstrain will be available for viewing in the tree view). As an example below, the following tracks have been added to cart:
 
 .. image:: _static/use18.png
 
