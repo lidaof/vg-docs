@@ -106,7 +106,7 @@ By “Location”:
 
 Or by “Collection Date”:
 
-..image:: _static/use17.png
+.. image:: _static/use17.png
 
 Identifying Strains of Interest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
