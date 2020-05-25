@@ -14,13 +14,13 @@ The SNV track is a new track type added to the WashU Virus Genome Browser to vie
 Density mode and the “zoomed-out” view
 --------------------------------------
 
-The density mode was implemented because when viewing the entire genome, individual variations are impossible to see. Instead, the density mode depicts the frequency of mutations across the genome, averaging over genomic intervals, as illustrated in the screenshot below. 2 SARS strains (AY278488.2 (“BJ01”) and “DQ71615.1 (“bat rp3”)) and one SARS-CoV-2 strain (the reference strain, NC_045512.2) are aligned to the SARS reference genome. Sequence variation displayed in density mode shows that the divergence between the SARS-CoV-2 reference genome (red, below) and the SARS reference genome is higher than the divergence between the two additional SARS strains (green, below) and the SARS reference genome. 
+The density mode was implemented because when viewing the entire genome, individual variations are impossible to see. Instead, the density mode depicts the frequency of mutations across the genome, averaging over genomic intervals, as illustrated in the screenshot below. 2 SARS strains (AY278488.2 (“BJ01”) and DQ71615.1 (“bat rp3”)) and one SARS-CoV-2 strain (the reference strain, NC_045512.2) are aligned to the SARS reference genome. Sequence variation displayed in density mode shows that the divergence between the SARS-CoV-2 reference genome (red, below) and the SARS reference genome is higher than the divergence between the two additional SARS strains (green, below) and the SARS reference genome. 
 
 For AY278488.2, the variation from reference is mainly confined to the beginning of the genome, while the remainder of the genome is relatively consistent with the reference. However, for DQ071615.1 (bat-derived), the 5’ end of gene S displays high variation from the reference genome. Likewise, the SARS Shannon track shows that the SARS genome is highly diverse across different strains across gene S. Once a region of interest is identified, the standard magnification tool (circled in red) of the browser can be used to quickly zoom into the region.
 
 .. image:: _static/snv2.png
 
-Full mode at a zoomed in view
+Full mode and the "zoomed-in" view
 -----------------------------
 
 When zoomed in to the nucleotide-level and displayed in “Full” mode, a color-coded track indicating all the variation from reference will be shown. The “Full” mode is further detailed below.
@@ -34,9 +34,7 @@ Nomenclature:
 
 **Query**: The “query” is the sequence being aligned to the “reference”. 
 
-**Variation** refers to events where the nucleotide of the query at a certain position is difference from the reference. It can be a mismatch, insertion or deletion. 
-
-.. image:: _static/snv4.png
+**Variation** refers to events where the nucleotide of the query at a certain position is different from the reference. It can be a mismatch, insertion or deletion. 
 
 Color code:
 ^^^^^^^^^^^
@@ -55,9 +53,9 @@ Deletions:
 
 Insertions:
 
-1.	the reference on the browser is always ungapped. If a insertion into the query happens (which signifies a gap for the reference in a pairwise alignment), the nucleotide proceding the insertion will be colored “blue”. Details of inserted sequences will be revealed if you click on the nucleotide colored blue.  
+1.	The reference on the browser is always ungapped. If an insertion into the query happens (which signifies a gap for the reference in a pairwise alignment), the nucleotide proceeding the insertion will be colored “blue”. Details of inserted sequences will be revealed if you click on the nucleotide colored blue.  
 
-.. image:: _static/snv5.png
+.. image:: _static/snv4.png
 
 
 Behind the SNV track: the “pairwise” format
@@ -70,7 +68,7 @@ Uploading interface
 
 In the browser view, click “Tracks” and then “Remote Tracks”. This will lead the user to a upload interface. Once there, select “pairwise” as the track type and enter the track’s URL.
 
-.. image:: _static/snv6.png
+.. image:: _static/snv5.png
 
 Alternatively, if the track is stored on the user’s local computer, he/she can upload the track by selecting “Tracks” > “Local Tracks”. See the “Tracks” section under “Navigating the WashU Virus Genome Browser” above for more details.
 
@@ -80,8 +78,11 @@ The pairwise format
 The pairwise format is an extension of the .bed format, where the 4th column contains variations from the reference. Specifically::
 
 Column 1: Name of the reference that the query is aligned to
+
 Column 2: The start position on the reference
+
 Column 3: The end position on the reference
+
 Column 4: Variation type and details
 
 For columns 2 and 3, since the pairwise format is per-nucleotide, “end” usually equals “start” + 1 (the only exception is a deletion, and when several consecutive nucleotides are deleted, they can be merged into 1 line). Also, the browser is 0-based, which means that if there is a mismatch at the first nucleotide, column 2 would be “0” while column 3 would be “1”.
@@ -105,7 +106,7 @@ For column 4, the format is “variation_type:detail”. Variation types are: �
     NC_004718.3     3059    3062    deletion: AGA
     NC_004718.3     3223    3224    deletion: A
 
-.. note:: The files need to sorted, zipped and indexed before uploading, just as any .bed file would need to be. To zip the files:
+.. note:: The files need to sorted, zipped, and indexed before uploading, just as you would need to do for any .bed file. To zip the files:
 
 .. code-block:: bash
     sort -k1,1 -k2,2n snvfile > snvfile.sort
@@ -173,7 +174,7 @@ The script is: publicAlignment.py and is located here: https://github.com/debugp
 Batch upload as json files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We offer another script (“publicJsonGen.py”, located here: https://github.com/debugpoint136/WashU-Virus-Genome-Browser/blob/master/scripts/publicJsonGen.py)that takes in a tab-delimited txt file (.tsv file) listing the web location and track type of individual files, and output a .json file that can be used to upload multiple tracks in batch.
+We offer another script (“publicJsonGen.py”, located here: https://github.com/debugpoint136/WashU-Virus-Genome-Browser/blob/master/scripts/publicJsonGen.py ) that takes in a tab-delimited text file (.tsv file) listing the web location and track type of individual files, and outputs a .json file that can be used to upload multiple tracks in batch.
 
 .. code-block:: bash
 
@@ -189,7 +190,7 @@ We offer another script (“publicJsonGen.py”, located here: https://github.co
             
     contact: changxu.fan@gmail.com for help
 
-The .tsv file that can be converted looks like this:
+The .tsv file should have a format similar to that shown below in order for a successful conversion:
 
 .. csv-table::
     :header: "name", "url",	"track_type", "virus"
@@ -201,11 +202,6 @@ The .tsv file that can be converted looks like this:
 Upload json-formatted datahub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To upload a son-formatted data hub, in the browser view, select “Tracks” and then select either “Remote Tracks” or “Local Tracks” (depending on whether the .json file is stored remotely to locally, see above documentation under “Navigating the WashU Virus Genome Browser” for further details). 
+To upload a json-formatted data hub, in the browser view, select “Tracks” and then select either “Remote Tracks” or “Local Tracks” (depending on whether the .json file is stored remotely to locally, see above documentation under “Navigating the WashU Virus Genome Browser” for further details). 
 
-A .tsv file should have a format similar to that shown below in order for a successful conversion.
-
-name	url	track_type	virus
-SARS_AY278488.2_SNV	https://your.url.to.file1	pairwise	SARS
-SARS_DQ071615.1_SNV	https://your.url.to.file2	pairwise	SARS
-SARS_AY278488.2_SNV	https://your.url.to.file3	pairwise	SARS
+.. image:: _static/snv6.png
