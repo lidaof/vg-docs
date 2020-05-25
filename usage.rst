@@ -1,4 +1,4 @@
-NNavigating the WashU Virus Genome Browser
+Navigating the WashU Virus Genome Browser
 =========================================
 
 Virus Browser Home Page
