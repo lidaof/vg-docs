@@ -19,7 +19,7 @@ When users select the “Browser View” (orange arrow above), they are taken to
 
 .. image:: _static/use3.png
 
-To the right of the WashU Virus Genome Browser logo is a utility bar (circled above in red), similar to the one provided in the WashU Epigenome Browser. From left to right, this bar lists the reference species the user is currently viewing, provides a platform for navigating the genome to particular regions of interest, provides a drop-down menu for selecting data tracks to be viewed on the browser, provides several applications for viewing, sharing, or saving region views and tracks of interest, and provides several customizable options in “Settings”, such as the ability to highlight a region of interest and change the track length width, among others. Detailed information regarding the use of the region locator can be found within the Epigenome Browser tutorial (https://readthedocs.io/en/latest/usage.html#the-top-menu).
+To the right of the WashU Virus Genome Browser logo is a utility bar (circled above in red), similar to the one provided in the WashU Epigenome Browser. From left to right, this bar lists the reference species the user is currently viewing, provides a platform for navigating the genome to particular regions of interest, provides a drop-down menu for selecting data tracks to be viewed on the browser, provides several applications for viewing, sharing, or saving region views and tracks of interest, and provides several customizable options in “Settings”, such as the ability to highlight a region of interest and change the track legend width, among others. Detailed information regarding the use of the region locator can be found within the Epigenome Browser tutorial (https://eg.readthedocs.io/en/latest/usage.html#the-top-menu).
 
 Details regarding the default tracks loaded into view for SARS-CoV-2, which include a sequence diversity track, a mutation frequency track, RNA expression, putative SARS immune epitopes, transcription regulatory sequence locations, recombinations, RNA modifications, and SNV tracks of any strains in the user’s cart, are discussed further below.
 
@@ -30,7 +30,7 @@ The “Tracks” tab lists several functionalities, from loading existing tracks
 
 .. image:: _static/use4.png
 
-From this drop-down menu, if the user selects “Annotation Tracks:, an expandable menu of pre-existing tracks appears for the user to select from. For SARS-CoV-2, these tracks include gene annotations, genome comparison tracks, a GC density track, as well as a sequence diversity track and a mutation alert track, all of which can be loaded into the current browser session. Of particular clinical importance, the Sequence diversity (Shannon Entropy) track comprehensively displays the divergence across all GISAID strains at each genomic position. Additionally, the “Mutation Alter” track displays the number of strains with a mutation at each position. Together, these tracks provide an overview of accumulating mutations and their abundance, aiding in monitoring diagnostic primers for expected effectiveness as the virus evolves. Because of this utility, both the “Sequence diversity (Shannon Entropy)” track and the “Mutation Alert” track are loaded into view by default.
+From this drop-down menu, if the user selects “Annotation Tracks", an expandable menu of pre-existing tracks appears for the user to select from. For SARS-CoV-2, these tracks include gene annotations, genome comparison tracks, a GC density track, as well as a sequence diversity track and a mutation alert track, all of which can be loaded into the current browser session. Of particular clinical importance, the "Sequence diversity (Shannon Entropy)" track comprehensively displays the divergence across all GISAID strains at each genomic position. Additionally, the “Mutation Alert” track displays the number of strains with a mutation at each position. Together, these tracks provide an overview of accumulating mutations and their abundance, aiding in monitoring diagnostic primers for expected effectiveness as the virus evolves. Because of this utility, both the “Sequence diversity (Shannon Entropy)” track and the “Mutation Alert” track are loaded into view by default.
 
 .. image:: _static/use5.png
 
@@ -106,7 +106,7 @@ By “Location”:
 
 Or by “Collection Date”:
 
-..image:: _static/use17.png
+.. image:: _static/use17.png
 
 Identifying Strains of Interest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
