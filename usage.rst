@@ -91,7 +91,7 @@ Additional links include one to our documentation page, with helpful tutorials, 
 Phylogenetic Tree View
 ----------------------
 
-When users select the “Tree View” (blue arrow in first figure shown above), they are taken to our tree visual representation of the strains from the selected reference species. If the selected reference is SARS-CoV-2, the browser will load in a phylogenetic tree parsed from Nextstrain (http://data.Nextstrain.org/ncov_global.json), and therefore includes only strains available from Nextstrain. If the user selects any of the remaining three viruses (SARS, MERS, or Ebola), they are directed to an approximately-maximun-likelihood tree consisting of all available strains hosted by NCBI (https://www.ncbi.nlm.nih.gov/nuccore), built using FastTree with the GTR substitution model. 
+When users select the “Tree View” (blue arrow in second figure shown above), they are taken to our tree visual representation of the strains from the selected reference species. If the selected reference is SARS-CoV-2, the browser will load in a phylogenetic tree parsed from Nextstrain (http://data.Nextstrain.org/ncov_global.json), and therefore includes only strains available from Nextstrain. If the user selects any of the remaining three viruses (SARS, MERS, or Ebola), they are directed to an approximately-maximun-likelihood tree consisting of all available strains hosted by NCBI (https://www.ncbi.nlm.nih.gov/nuccore), built using FastTree with the GTR substitution model. 
 
 Coloring Tree by Metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^
