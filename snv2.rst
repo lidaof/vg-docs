@@ -85,7 +85,7 @@ One of our snv2 tracks for SARS-CoV-2 is coded like this:
 	NC_045512.2     29872   29903   un_sequenced            un_sequenced
 
 Scripts for generating snv2 tracks
-==================================
+----------------------------------
 
 All of our premade SNV2 tracks that you can see in :code:`Tracks -> Public Data Hubs` are generated through a set of scripts that can be found at https://github.com/debugpoint136/WashU-Virus-Genome-Browser/tree/master/scripts/snv2/
 
