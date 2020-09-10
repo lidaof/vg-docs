@@ -14,6 +14,7 @@ Welcome to WashU Virus Genome Browser's documentation!
    snv.rst
    snv2.rst
    hub.rst
+   contact.rst
 
 Indices and tables
 ==================
